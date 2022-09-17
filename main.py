@@ -14,6 +14,13 @@ df.drop('Rank', 1, inplace = True)
 df.reset_index(inplace = True)
 df.drop('index', 1, inplace = True)
 
+# EXCERCISE 2
+
+new_column = ["P", "Q", "R", "S"]
+insert_position = 1
+
+df.insert(insert_position, "Col_C", new_column)
+
 print(df.head())
 
 """
