@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 df = pd.DataFrame([["A", 1], ["B", 2], ["C", 3], ["D", 4]],
 		  columns = ["Col_A", "Col_B"])
@@ -37,7 +38,7 @@ df2 = pd.DataFrame([["A", 1, True], ["B", 2, False],
 
 dt_type = "bool"
 
-print(df2.select_dtypes(dt_type))
+#print(df2.select_dtypes(dt_type))
 
 """
 	col_C
@@ -45,4 +46,25 @@ print(df2.select_dtypes(dt_type))
 1	False
 2	False
 3	True
+"""
+# EXCERCISE 4
+
+df3 = pd.DataFrame([["A", np.NaN], [np.NaN, 2],
+                   ["C", np.NaN], ["D", 4]], 
+                  columns=["col_A", "col_B"])
+
+"""
+	col_A	col_B
+0	A	NaN
+1	NaN	2.0
+2	C	NaN
+3	D	4.0
+"""
+#print(df3.notnull().sum())
+# OR
+#print(df3.count())
+
+"""
+col_A    3
+col_B    2
 """
